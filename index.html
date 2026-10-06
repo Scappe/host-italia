@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calcolatore affitti brevi 2026: quanto guadagni davvero con Airbnb e Booking</title>
+<meta name="description" content="Calcolatore gratuito per host italiani: guadagno netto dell'affitto breve dopo commissioni, cedolare secca 21% o 26%, pulizie e costi. Con prezzo minimo per notte e confronto con l'affitto tradizionale.">
+<link rel="canonical" href="https://scappe.github.io/host-italia/">
+<meta property="og:title" content="Quanto guadagni davvero con Airbnb? Calcolatore 2026">
+<meta property="og:description" content="Netto in tasca dopo commissioni, cedolare secca e costi. Gratis, in 30 secondi.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://scappe.github.io/host-italia/og.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+<style>
+  :root { --dark:#1F3A5F; --accent:#E76F51; --accent2:#cf5a3d; --grey:#6B7280; --light:#F2F5F9; --line:#e5e7eb; --ok:#15803d; --bad:#b91c1c; --bg:#ffffff; --text:#1f2937; --card:#ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --dark:#9cc2ee; --grey:#9ca3af; --light:#1b2433; --line:#2c3646; --bg:#0f1621; --text:#e5e7eb; --card:#151e2b; --ok:#4ade80; --bad:#f87171; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--text); background:var(--bg); line-height:1.55; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 40px 0 16px; }
+  .tag { color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.06em; font-size:.8rem; }
+  h1 { font-size: clamp(1.7rem, 4.5vw, 2.6rem); line-height:1.15; color:var(--dark); margin:.3em 0 .4em; }
+  .lead { font-size:1.1rem; color:var(--grey); max-width: 680px; margin:0; }
+  .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 28px 0; }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; }
+  label { display:block; font-size:.92rem; font-weight:600; margin: 12px 0 4px; }
+  label small { font-weight:400; color:var(--grey); }
+  input, select { width:100%; min-width:0; padding:10px 12px; font-size:1rem; border:1px solid var(--line); border-radius:8px; background:var(--bg); color:var(--text); }
+  input:focus, select:focus { outline:2px solid var(--accent); border-color:transparent; }
+  .row2 { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; }
+  .grid > * { min-width:0; }
+  .big { font-size: 2.4rem; font-weight:800; color:var(--ok); line-height:1.1; }
+  .big.neg { color: var(--bad); }
+  .muted { color:var(--grey); font-size:.9rem; }
+  table { width:100%; border-collapse:collapse; margin-top:12px; font-size:.95rem; }
+  td { padding:7px 0; border-bottom:1px solid var(--line); }
+  td:last-child { text-align:right; font-variant-numeric: tabular-nums; font-weight:600; }
+  .minus { color: var(--bad); }
+  .highlight { background:var(--light); border-radius:10px; padding:12px 14px; margin-top:14px; font-size:.95rem; }
+  .cta { background: var(--dark); color:#fff; border-radius:16px; padding:28px; margin: 32px 0; }
+  @media (prefers-color-scheme: dark) { .cta { background:#1d3557; } }
+  .cta h2 { margin:0 0 8px; font-size:1.6rem; color:#fff; }
+  .cta ul { padding-left: 1.1em; margin: 12px 0 18px; }
+  .cta li { margin: 6px 0; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:700; padding:14px 22px; border-radius:10px; font-size:1.05rem; }
+  .btn:hover { background:var(--accent2); }
+  .price { font-size:1.4rem; font-weight:800; margin-left: 10px; }
+  .price s { opacity:.6; font-weight:400; font-size:1rem; margin-right:6px; }
+  h2.sec { color:var(--dark); margin-top: 40px; }
+  .faq details { border-bottom:1px solid var(--line); padding: 12px 0; }
+  .faq summary { font-weight:600; cursor:pointer; }
+  footer { color:var(--grey); font-size:.85rem; padding: 32px 0 48px; border-top:1px solid var(--line); margin-top:40px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="tag">Calcolatore gratuito · regole 2026</div>
+    <h1>Quanto guadagni davvero con l'affitto breve?</h1>
+    <p class="lead">Airbnb ti mostra il lordo. Qui vedi quello che ti resta in tasca dopo commissioni, cedolare secca, pulizie e bollette. Ci vogliono 30 secondi.</p>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <div class="row2">
+        <div><label for="prezzo">Prezzo medio a notte</label><input id="prezzo" type="number" inputmode="decimal" value="90" min="0"></div>
+        <div><label for="notti">Notti prenotate al mese</label><input id="notti" type="number" inputmode="decimal" value="17" min="0" max="31"></div>
+      </div>
+      <div class="row2">
+        <div><label for="durata">Notti per soggiorno <small>(media)</small></label><input id="durata" type="number" inputmode="decimal" value="3" min="1"></div>
+        <div><label for="pulOsp">Pulizia fatta pagare all'ospite</label><input id="pulOsp" type="number" inputmode="decimal" value="40" min="0"></div>
+      </div>
+      <div class="row2">
+        <div><label for="comm">Commissione piattaforma %</label><input id="comm" type="number" inputmode="decimal" value="15.5" min="0" max="50" step="0.1"></div>
+        <div><label for="pulCosto">Quanto ti costa ogni pulizia</label><input id="pulCosto" type="number" inputmode="decimal" value="45" min="0"></div>
+      </div>
+      <div class="row2">
+        <div><label for="fissi">Bollette e spese al mese</label><input id="fissi" type="number" inputmode="decimal" value="230" min="0"></div>
+        <div><label for="aliq">Cedolare secca</label>
+          <select id="aliq"><option value="0.21">21% (primo immobile)</option><option value="0.26">26% (secondo immobile)</option></select></div>
+      </div>
+      <label for="lungo">Se lo affittassi a lungo termine, a quanto? <small>(€/mese, facoltativo)</small></label>
+      <input id="lungo" type="number" inputmode="decimal" value="650" min="0">
+    </div>
+
+    <div class="card" aria-live="polite">
+      <div class="muted">Ti restano in tasca ogni mese</div>
+      <div class="big" id="netto">–</div>
+      <div class="muted" id="nettoAnno">–</div>
+      <table>
+        <tr><td>Incasso lordo dagli ospiti</td><td id="lordo">–</td></tr>
+        <tr><td>Commissione piattaforma</td><td class="minus" id="commV">–</td></tr>
+        <tr><td>Cedolare secca</td><td class="minus" id="tasse">–</td></tr>
+        <tr><td>Pulizie</td><td class="minus" id="pul">–</td></tr>
+        <tr><td>Bollette e spese</td><td class="minus" id="fissiV">–</td></tr>
+      </table>
+      <div class="highlight" id="minimo">–</div>
+      <div class="highlight" id="confronto">–</div>
+    </div>
+  </div>
+
+  <section class="cta" id="kit">
+    <h2>Vuoi fare i conti sul serio, mese per mese, ed essere in regola?</h2>
+    <p>Il <b>Kit Host Italia 2026</b> è quello che serve a un host privato, in un unico download:</p>
+    <ul>
+      <li>📊 <b>Calcolatore completo</b> (Excel e Google Fogli): 12 mesi con alta e bassa stagione, tasse già trattenute e da versare, prezzo minimo per notte, confronto con l'affitto tradizionale e il canone concordato.</li>
+      <li>✅ <b>Guida e checklist 2026</b> in PDF: CIN, dispositivi di sicurezza, Alloggiati Web, riconoscimento degli ospiti dopo la sentenza del Consiglio di Stato, imposta di soggiorno, tasse e sanzioni.</li>
+      <li>💬 <b>12 messaggi pronti</b> per gli ospiti in italiano, inglese, tedesco e francese, dalla richiesta dei documenti alla recensione.</li>
+      <li>📖 <b>Libretto di benvenuto</b> in italiano e inglese, modificabile in Word o Google Documenti.</li>
+      <li>📅 <b>Calendario delle scadenze</b> dell'host e aggiornamento gratuito all'edizione 2027.</li>
+    </ul>
+    <a class="btn" href="GUMROAD_URL" id="buy">Scarica il kit</a>
+    <span class="price"><s>29 €</s>19 €</span>
+    <p class="muted" style="color:#cbd5e1;margin-top:12px">Pagamento sicuro con carta o PayPal tramite Gumroad. Download immediato.</p>
+  </section>
+
+  <h2 class="sec">Come si calcola il guadagno netto di un affitto breve</h2>
+  <p>Il calcolo che fa questo strumento è semplice, ma molti host lo sbagliano perché dimenticano due cose: la <b>cedolare secca si paga sul lordo</b> (comprese le pulizie che fai pagare all'ospite) e le <b>commissioni di Airbnb o Booking non si possono dedurre</b>.</p>
+  <p><b>Netto = incasso lordo − commissione − cedolare secca − costo delle pulizie − bollette e spese.</b></p>
+  <p>Dal 2026, per chi affitta come privato, la cedolare secca è al <b>21%</b> sul primo immobile e al <b>26%</b> sul secondo. Dal terzo appartamento si presume un'attività d'impresa e servono partita IVA e commercialista. Le piattaforme trattengono comunque il 21% come ritenuta d'acconto: se sei al 26%, la differenza la versi in dichiarazione.</p>
+  <p>Leggi anche: <a href="obblighi-affitti-brevi-2026.html">tutti gli obblighi degli affitti brevi nel 2026</a>.</p>
+
+  <h2 class="sec">Domande frequenti</h2>
+  <div class="faq">
+    <details><summary>Le pulizie che faccio pagare all'ospite sono tassate?</summary><p>Sì. Fanno parte del corrispettivo della locazione, quindi rientrano nella base su cui paghi la cedolare secca.</p></details>
+    <details><summary>Posso dedurre la commissione di Airbnb o Booking?</summary><p>No. Con la cedolare secca non si deduce nessun costo: l'imposta si calcola sul lordo.</p></details>
+    <details><summary>Airbnb mi trattiene il 21%: devo pagare altro?</summary><p>Se hai un solo immobile al 21% e tutte le prenotazioni passano da piattaforme che fanno la ritenuta, di solito no. Se sei al 26% o hai prenotazioni dirette, versi la differenza con la dichiarazione dei redditi.</p></details>
+    <details><summary>Quante notti al mese servono per guadagnare?</summary><p>Dipende dal prezzo e dai costi. Il riquadro "prezzo minimo" qui sopra ti dice sotto quale prezzo medio vai in perdita con le notti che hai inserito.</p></details>
+    <details><summary>Conviene di più l'affitto breve o quello tradizionale?</summary><p>Inserisci il canone che otterresti con un inquilino nel campo in basso: il calcolatore ti mostra la differenza. Ricorda che l'affitto breve richiede molto più tempo e più adempimenti.</p></details>
+  </div>
+
+  <footer>
+    Strumento informativo aggiornato alla Legge di Bilancio 2026. Non è consulenza fiscale: per la tua situazione specifica rivolgiti a un commercialista. ·
+    <a href="obblighi-affitti-brevi-2026.html">Obblighi affitti brevi 2026</a>
+  </footer>
+</div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+  const eur = (n) => (n < 0 ? '−' : '') + Math.abs(Math.round(n)).toLocaleString('it-IT') + ' €';
+  const num = (id) => { const v = parseFloat(String($(id).value).replace(',', '.')); return isFinite(v) && v > 0 ? v : 0; };
+  function calc() {
+    const prezzo = num('prezzo'), notti = Math.min(num('notti'), 31), durata = Math.max(num('durata'), 1);
+    const pulOsp = num('pulOsp'), comm = num('comm') / 100, pulCosto = num('pulCosto'), fissi = num('fissi');
+    const aliq = parseFloat($('aliq').value), lungo = num('lungo');
+    const soggiorni = notti / durata;
+    const lordo = notti * prezzo + soggiorni * pulOsp;
+    const commV = lordo * comm, tasse = lordo * aliq, pul = soggiorni * pulCosto;
+    const netto = lordo - commV - tasse - pul - fissi;
+    $('netto').textContent = eur(netto);
+    $('netto').classList.toggle('neg', netto < 0);
+    $('nettoAnno').textContent = 'circa ' + eur(netto * 12) + ' l\'anno · ' + (notti ? eur(netto / notti) : '0 €') + ' per notte prenotata';
+    $('lordo').textContent = eur(lordo);
+    $('commV').textContent = '−' + eur(commV);
+    $('tasse').textContent = '−' + eur(tasse);
+    $('pul').textContent = '−' + eur(pul);
+    $('fissiV').textContent = '−' + eur(fissi);
+    const k = 1 - comm - aliq;
+    if (notti > 0 && k > 0) {
+      const minimo = ((fissi + pul) / k - soggiorni * pulOsp) / notti;
+      $('minimo').innerHTML = minimo > 0
+        ? `📉 Con ${notti} notti al mese, <b>sotto ${eur(minimo)} a notte vai in perdita</b>.`
+        : '📉 Con questi numeri le pulizie addebitate coprono già i costi fissi.';
+    } else { $('minimo').textContent = 'Inserisci le notti prenotate per vedere il prezzo minimo.'; }
+    if (lungo > 0) {
+      const nettoLungo = lungo * (1 - 0.21) * 11 / 12; // 21%, un mese sfitto all'anno
+      const diff = netto - nettoLungo;
+      $('confronto').innerHTML = diff >= 0
+        ? `🏠 Rispetto all'affitto tradizionale (circa ${eur(nettoLungo)} netti al mese) guadagni <b>${eur(diff)} in più al mese</b>, ma con molto più lavoro.`
+        : `🏠 Attenzione: con un affitto tradizionale prenderesti circa ${eur(nettoLungo)} netti al mese, <b>${eur(-diff)} più dell'affitto breve</b>.`;
+    } else { $('confronto').textContent = 'Inserisci un canone per confrontarlo con l\'affitto tradizionale.'; }
+  }
+  document.querySelectorAll('input, select').forEach((el) => el.addEventListener('input', calc));
+  calc();
+</script>
+</body>
+</html>
